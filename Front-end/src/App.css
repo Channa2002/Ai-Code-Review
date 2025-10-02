@@ -56,7 +56,24 @@ main .left .review-btn {
   cursor: pointer;
   user-select: none;
   }
-  
+
+
+  main .left .logout-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 8rem;
+  padding: 0.5rem 1rem;
+  background-color: #7a757586;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  }
+  main .left .logout-btn:hover {
+    background-color: red;
+}
   main .left .review-btn:hover {
     background-color: green;
 }
