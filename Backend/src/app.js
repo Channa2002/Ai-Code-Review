@@ -1,6 +1,11 @@
 const express = require("express");
 const aiRoutes = require("./routes/ai.routes");
 const cors = require("cors");
+// import historyRoutes from "./routes/history.routes.js";
+
+
+// import mongoose from "mongoose";
+// require("dotenv").config();
 
 const app = express();
 
@@ -17,10 +22,13 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+
+
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 })
 
 app.use("/ai", aiRoutes);
+
 
 module.exports = app;
