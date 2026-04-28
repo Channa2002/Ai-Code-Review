@@ -11,17 +11,19 @@ import "highlight.js/styles/github-dark.css";
 import { auth } from "./firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { VscRunAll } from "react-icons/vsc";
 
 function  MainPage() {
   const [code, setCode] = useState(`function sum(){
     sum a + b
     }`);
   const [review, setReview] = useState(``);
+  const token = localStorage.getItem("token");
 
    async function reviewCode() {
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/ai/get-review`, { code });
-    setReview(response.data);
-    
+    setReview(response.data);    
   }
 
   useEffect(() => {
@@ -38,12 +40,11 @@ function  MainPage() {
       console.error("Logout Error:", err.message);
     }
   };
+
   return (
     <>
-    <main>
-
-      <div className='left'>
-        
+    <main className='app-container'>
+      <div className='left'>  
         <div className="code">
             
             <Editor
@@ -62,8 +63,12 @@ function  MainPage() {
                 />
         </div>
         {/* <h2>Welcome, {auth.currentUser?.email}</h2> */}
-        <div className="review-btn" onClick={reviewCode}>Review</div>
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+        {/* <div className="review-btn" onClick={reviewCode}>Review</div> */}
+        <VscRunAll className="review-btn" onClick={reviewCode}/>
+
+        {/* <button className="logout-btn" onClick={handleLogout}>Logout</button> */}
+        <RiLogoutCircleLine className="logout-btn" onClick={handleLogout}/>
+        {/* <button className="logout-btn" onClick={handleLogout}>Review</button> */}
         
       </div>
 

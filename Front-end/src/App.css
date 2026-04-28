@@ -49,30 +49,36 @@ main .left .review-btn {
   right: 1rem;
   padding: 0.5rem 1rem;
   background-color: #7a757586;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   color: white;
   font-weight: bold;
   border: none;
   cursor: pointer;
   user-select: none;
+   height: 50px;
+  width: 50px;
   }
 
 
   main .left .logout-btn {
   position: absolute;
   bottom: 1rem;
-  right: 8rem;
+  right: 5rem;
   padding: 0.5rem 1rem;
   background-color: #7a757586;
-  border-radius: 0.5rem;
-  color: white;
+  /* background-color: azure; */
+  border-radius: 50%;
+  /* color: black; */
   font-weight: bold;
   border: none;
   cursor: pointer;
   user-select: none;
+  height: 50px;
+  width: 50px;
   }
   main .left .logout-btn:hover {
     background-color: red;
+
 }
   main .left .review-btn:hover {
     background-color: green;
