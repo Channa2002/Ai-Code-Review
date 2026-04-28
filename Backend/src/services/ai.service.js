@@ -7,7 +7,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY);
 
 // Make sure to use a valid model name (e.g., gemini-1.5-flash)
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-3.1-flash-lite-preview",
+  model: "gemini-3-flash-preview",
   systemInstruction: `
  Here’s a solid system instruction for your AI code reviewer:
 
